@@ -6,7 +6,6 @@
     <%= link_to article.name, article %>
     <span class="comments">(<%= pluralize(article.comments.size, 'comment') %>)</span>
   </h2>
-  <div class="published_at">on <%= article.published_at.strftime('%b %d, %Y') %></div>
   <div class="content"><%= article.content %></div>
 <% end %>
 </div>
