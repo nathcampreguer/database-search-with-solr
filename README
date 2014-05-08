@@ -1,3 +1,9 @@
+<b>Database search with Solr using the Sunspot library</b>
+
+Using railscasts episode #278 blog_after example as a start point.
+
+-------------------------------------------------------------------
+
 RailsCasts Episode #278 Search with Sunspot
 
 http://railscasts.com/episodes/278-search-with-sunspot
