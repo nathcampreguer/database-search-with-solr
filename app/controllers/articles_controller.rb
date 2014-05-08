@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
     @search = Article.search do
       fulltext params[:search] do
         boost_fields :name => 2.0
+        phrase_fields :content => 2.0
+        phrase_slop   1
       end
     end
     @articles = @search.results

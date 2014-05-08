@@ -400,3 +400,9 @@ May 08, 2014 6:07:09 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={q=*:*&start=0&fq=type:Article&rows=30&wt=ruby} hits=3 status=0 QTime=1 
 May 08, 2014 6:07:15 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={q=banana&defType=edismax&qf=name_text^2.0+content_text&fl=*+score&start=0&fq=type:Article&rows=30&wt=ruby} hits=2 status=0 QTime=2 
+May 08, 2014 6:36:55 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={q=banana&defType=edismax&ps=1&qf=name_text^2.0+content_text&fl=*+score&pf=content_text^2.0&start=0&fq=type:Article&rows=30&wt=ruby} hits=2 status=0 QTime=5 
+May 08, 2014 6:36:58 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={q=banana&defType=edismax&ps=1&qf=name_text^2.0+content_text&fl=*+score&pf=content_text^2.0&start=0&fq=type:Article&rows=30&wt=ruby} hits=2 status=0 QTime=1 
+May 08, 2014 6:37:02 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={q=banana+limao&defType=edismax&ps=1&qf=name_text^2.0+content_text&fl=*+score&pf=content_text^2.0&start=0&fq=type:Article&rows=30&wt=ruby} hits=1 status=0 QTime=7 

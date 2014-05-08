@@ -1107,3 +1107,35 @@ Started GET "/articles?utf8=%E2%9C%93&search=banana" for 127.0.0.1 at 2014-05-08
   [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 7)
 Rendered articles/index.html.erb within layouts/application (11.0ms)
 Completed 200 OK in 31ms (Views: 13.2ms | ActiveRecord: 0.6ms | Solr: 5.9ms)
+
+
+Started GET "/articles?utf8=%E2%9C%93&search=banana" for 127.0.0.1 at 2014-05-08 18:36:55 -0300
+  Processing by ArticlesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"banana"}
+  [1m[32mSOLR Request (9.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Article"][0m, q: [1m[1m"banana"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"name_text^2.0 content_text"[0m, defType: [1m[1m"edismax"[0m, pf: [1m[1m"content_text^2.0"[0m, ps: [1m[1m1[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" IN (5, 7)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 5)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 7)[0m
+Rendered articles/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 33ms (Views: 13.4ms | ActiveRecord: 0.6ms | Solr: 9.2ms)
+
+
+Started GET "/articles?utf8=%E2%9C%93&search=banana" for 127.0.0.1 at 2014-05-08 18:36:58 -0300
+  Processing by ArticlesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"banana"}
+  [1m[32mSOLR Request (4.7ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Article"][0m, q: [1m[1m"banana"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"name_text^2.0 content_text"[0m, defType: [1m[1m"edismax"[0m, pf: [1m[1m"content_text^2.0"[0m, ps: [1m[1m1[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[35mArticle Load (0.8ms)[0m  SELECT "articles".* FROM "articles" WHERE "articles"."id" IN (5, 7)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 5)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 7)
+Rendered articles/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 36ms (Views: 13.5ms | ActiveRecord: 1.0ms | Solr: 4.7ms)
+
+
+Started GET "/articles?utf8=%E2%9C%93&search=banana+limao" for 127.0.0.1 at 2014-05-08 18:37:02 -0300
+  Processing by ArticlesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"banana limao"}
+  [1m[32mSOLR Request (10.2ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Article"][0m, q: [1m[1m"banana limao"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"name_text^2.0 content_text"[0m, defType: [1m[1m"edismax"[0m, pf: [1m[1m"content_text^2.0"[0m, ps: [1m[1m1[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles" WHERE "articles"."id" IN (7)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".article_id = 7)
+Rendered articles/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 33ms (Views: 12.3ms | ActiveRecord: 0.4ms | Solr: 10.2ms)
