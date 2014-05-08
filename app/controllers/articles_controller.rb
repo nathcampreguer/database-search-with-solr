@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
   def index
     @search = Article.search do
-      fulltext params[:search]
+      fulltext params[:search] do
+        boost_fields :name => 2.0
+      end
     end
     @articles = @search.results
   end
